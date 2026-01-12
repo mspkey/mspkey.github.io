@@ -1,0 +1,677 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Client接口文档</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='客户端接口文档'><span>客户端接口文档</span></h1><h3 id='1-简介'><span>1. 简介</span></h3><p><span>介绍: 玄月验证是一款免费的自带发卡系统和收款系统的网络验证  采用的是当前主流的编程语言和数据库 后台采用golang(语言)+MongoDB(数据库)+Webscoket(协议) 是当前最流行的搭配  可用用各种语言的对接包括但不限于(c/c++  js  python c# java golang 易语言 H5)等各种语言  具有高并发/高可用/大容量存储等特点</span></p><p><span>适用版本:  v12</span></p><p><span>	</span><span> </span><a href='https://www.bilibili.com/video/BV1Fg4y1e7C3/?share_source=copy_web&amp;vd_source=59f7b9b8d8631e9b9fb888d3c5d8432a'><span>易语言教程</span></a><span>         </span><a href='https://www.bilibili.com/video/BV1rrSyY4Eom/?share_source=copy_web&amp;vd_source=59f7b9b8d8631e9b9fb888d3c5d8432a'><span>GO语言教程</span></a><span>          </span><a href='https://www.bilibili.com/video/BV1Q2Wze7E5L/?share_source=copy_web&amp;vd_source=59f7b9b8d8631e9b9fb888d3c5d8432a'><span>Python教程</span></a><span>         </span><a href='https://www.bilibili.com/video/BV1LHBdYDEhQ/?share_source=copy_web&amp;vd_source=59f7b9b8d8631e9b9fb888d3c5d8432a'><span>一键加验证教程</span></a></p><h5 id='开发技术栈'><span>开发技术栈:</span></h5><ol start='' ><li><span>后端语言 :golang ----------------------------------&gt;支持高并发高可用</span></li><li><span>数据库:MongoDB  --------------------------------&gt;支持数据库大规模写入和读取操作</span></li><li><span>传输协议:Websocket -----------------------------&gt;数据传输实时性</span></li><li><span>服务器:Linux(Debian 11.0 ----------------------&gt;稳定安全还奈操</span></li><li><span>网页端:ts+vue+element-plus+pipa-----------&gt;通用</span></li></ol><p>&nbsp;</p><h5 id='为什么选择websocket协议呢'><span>为什么选择Websocket协议呢</span></h5><ol start='' ><li><span>ws协议能有更好的跨域和墙的穿透能力</span></li><li><span>可以在没有防火墙的情况下在应用层比http协议 防CC攻击效果更加好  (ps:很多IP代理 只能代理HTTP协议)</span></li><li><span>在高并发的场景下ws协议比HTTP协议 性能更好 查询数据库次数更少 (ws的头部 比http的头部更加精简)</span></li><li><span>ws协议可以在服务器端做更多的判断用来判断客户端的合法性 (http如果本地被干掉了心跳包 那就失去了对客户端的控制)</span></li><li><span>ws协议比HTTP协议 有更好的实时性 ,可以随时服务器向客户端推送数据</span></li><li><span>在相同的服务器配置下，</span><strong><span>WebSocket 协议</span></strong><span>通常比 </span><strong><span>HTTP 协议</span></strong><span> 能承受更高的并发连接</span></li><li><span>交互速度更快,响应速度更快</span></li></ol><p>&nbsp;</p><h5 id='常用功能介绍'><span>常用功能介绍:</span></h5><p><span>例如：注册赠送、绑机、转绑、多开限制、远程公告、远程变量、核心数据、黑名单管理、实时消息推送、在线用户管理、数量统计、账单核对、在线发卡、在线收款等</span></p><h5 id='特点介绍'><span>特点介绍:</span></h5><figure><table><thead><tr><th style='text-align:center;' ><strong><span>传输安全</span></strong></th><th style='text-align:center;' ><strong><span>超大并发技术</span></strong></th><th style='text-align:center;' ><strong><span>数据库自动备份</span></strong></th><th style='text-align:center;' ><strong><span>Linux 服务器</span></strong></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>玄月验证采用动态加密传输字符流技术,可防止数据被监听和窃取,大大提高了安全可靠性</span></td><td style='text-align:center;' ><span>因后台采用go语言开发,天然支持超高并发,能很好的</span></td><td style='text-align:center;' ><span>后台数据库自动备份功能,一天一备份,可以有效防止因误删除数据,而造成重大损失</span></td><td style='text-align:center;' ><span>Linux 系统是强大的系统,可以用最少的资源,换最大的工作效率,不仅安全可靠而且还十分稳定.</span></td></tr><tr><td style='text-align:center;' ><strong><span>模块对接</span></strong></td><td style='text-align:center;' ><strong><span>一键对接</span></strong></td><td style='text-align:center;' ><strong><span>接口对接</span></strong></td><td style='text-align:center;' ><strong><span>手机App管理</span></strong></td></tr><tr><td style='text-align:center;' ><span>玄月验证支持模块,目前已提供易语言的接口模块和示例,可使用远程变量/核心数据/加入黑名单/设置用户配置信息等功能</span></td><td style='text-align:center;' ><span>玄月验证支持一键加验证,提供两种模式选择 兼容模式支持x64带壳的程序,加完验证可继续加VMP壳子保护 注:能对接的绝不用一键</span></td><td style='text-align:center;' ><span>玄月验证提供了详细的接口文档,可对接其他编程语言,保证了对接的灵活性</span></td><td style='text-align:center;' ><span>玄月验证支持手机App管理,当电脑不在身边时可用App管理软件/卡密/用户,避免错失重要商机</span></td></tr></tbody></table></figure><h5 id='会员版-使用群主服务器'><span>会员版: 使用群主服务器</span></h5><p><span>特点: </span></p><ol start='' ><li><span>不用买服务器 简单方便 省去买服务器的钱</span></li><li><span>可以体验最新的功能</span></li></ol><h5 id='授权版使用自己的服务器'><span>授权版:使用自己的服务器</span></h5><p><span>特点:</span><span>	</span></p><ol start='' ><li><span>支持内网穿透可用( NAS  旧电脑 工控机) 等一些硬件设备作为服务器</span></li><li><span>支持轻应用服务器 (最低配置要求 1h1g1m 此配置可同时在线1000人,配置越高同时在线人数越多)</span></li><li><span>支持IPv6 (使访问速度更快 效率更高 配合ddns 可自建服务器)</span></li><li><span>不怕因群主服务器被攻击而躺枪</span></li><li><span>无软件位和用户量的限制 </span></li><li><span>数据存放在自己的服务器上    安全稳定</span></li><li><span>后台自动每天定时进行数据库备份 不用担心误删数据找不回来的情况</span></li><li><span>后台进程守护和开机自启  -&gt;程序挂掉会自动拉起的功能和重启服务器自动开机自启</span></li><li><span>支持高并发,因GO语言天然支持高并发 可以支持更多的连接</span></li></ol><h5 id='容量说明'><span>容量说明:</span></h5><p><span>删除软件/删除到期用户 可以恢复容量</span></p><ol start='' ><li><span>运营授权 :可以自己运营软件 自己卖验证 除授权版外的会员(包括 白银会员 黄金会员 铂金会员)</span></li><li><span>端口转发:因群主服务器在国外导致个别地区访问不了   搭建端口转发  (用户-&gt;你的服务器-&gt;群主服务器) 通过你的服务器中转连接群主服务器</span></li></ol><figure><table><thead><tr><th style='text-align:center;' ><span>模式</span></th><th style='text-align:center;' ><span>免费体验</span></th><th style='text-align:center;' ><span>白银会员</span></th><th style='text-align:center;' ><span>黄金会员</span></th><th style='text-align:center;' ><span>铂金会员</span></th><th style='text-align:center;' ><span>授权版</span></th><th style='text-align:center;' ><span>永久授权</span></th><th style='text-align:center;' ><span>运营授权</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>服务器</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>自备服务器(Linux)</span></td><td style='text-align:center;' ><span>自备服务器(Linux)</span></td><td style='text-align:center;' ><span>自备服务器(Linux)</span></td></tr><tr><td style='text-align:center;' ><span>软件</span></td><td style='text-align:center;' ><span>1个</span></td><td style='text-align:center;' ><span>10个</span></td><td style='text-align:center;' ><span>30个</span></td><td style='text-align:center;' ><span>50个</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td></tr><tr><td style='text-align:center;' ><span>用户</span></td><td style='text-align:center;' ><span>2个</span></td><td style='text-align:center;' ><span>100个</span></td><td style='text-align:center;' ><span>300个</span></td><td style='text-align:center;' ><span>500个</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td></tr><tr><td style='text-align:center;' ><span>卡密</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td></tr><tr><td style='text-align:center;' ><span>远程变量</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td><td style='text-align:center;' ><span>无限制</span></td></tr><tr><td style='text-align:center;' ><span>防破强度</span></td><td style='text-align:center;' ><span>困难</span></td><td style='text-align:center;' ><span>困难</span></td><td style='text-align:center;' ><span>困难</span></td><td style='text-align:center;' ><span>困难</span></td><td style='text-align:center;' ><span>困难</span></td><td style='text-align:center;' ><span>困难</span></td><td style='text-align:center;' ><span>困难</span></td></tr><tr><td style='text-align:center;' ><span>用户数据</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>群主服务器</span></td><td style='text-align:center;' ><span>自己服务器</span></td><td style='text-align:center;' ><span>自己服务器</span></td><td style='text-align:center;' ><span>自己服务器</span></td></tr><tr><td style='text-align:center;' ><span>通信封包加密</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>云检测</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>云更新</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>维护升级</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>实时收款</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>技术指导</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>VMP授权生成</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>端口转发</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>直链下载</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>运营验证</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>❌</span></td><td style='text-align:center;' ><span>✔</span></td></tr><tr><td style='text-align:center;' ><span>售价</span></td><td style='text-align:center;' ><span>0￥</span></td><td style='text-align:center;' ><span>25￥/月</span></td><td style='text-align:center;' ><span>30￥/月</span></td><td style='text-align:center;' ><span>40￥/月</span></td><td style='text-align:center;' ><span>388￥/年</span></td><td style='text-align:center;' ><span>2800￥</span></td><td style='text-align:center;' ><span>6800￥</span></td></tr></tbody></table></figure><p><span>	</span></p><h3 id='2-玄月验证接口使用说明'><span>2. 玄月验证接口使用说明</span></h3><p><span>使用websoket协议连接服务器 ,发送规定的json加密数据 来与服务器进行交互, </span></p><p><span>因群主服务器的原因 国内可能存在部分地区屏蔽情况  ，可采用转发的方式 使用自己的服务器进行转发</span></p><h3 id='3-websocket接口'><span>3. WebSocket接口</span></h3><p><span>群主免费服务器连接地址 : ws://msplock.vip:8810/api/user/ws?ExeID=xxx&amp;DevID=xxxx</span></p><p><span>如果你购买了服务器后台 请填写自己的服务器后台地址: 如ws://xxxxxx:8810/api/user/ws?ExeID=xxx&amp;DevID=xxxx       支持IPv6</span></p><h5 id='通信封包加密规则'><span>通信封包加密规则：</span></h5><p><span>接口通讯密钥(服务器自动下发)</span></p><p><span>提交数据加密：所有提交的数据发送:需通过RC4加密 才能与服务器通信  </span></p><p><span>返回数据解密：所有返回的数据发送:需要通过RC4解密 </span></p><p><span>服务器下发的数据均为 base64编码</span></p><p><span>注意: 连接服务器,服务器会自动下发接口加密的通讯密钥,需要使用 &lt;&lt;作者密钥&gt;&gt;  解密出接口的通讯密钥,之后使用新密钥进行加解密操作</span></p><p><span>需要将json 字符串进行utf-8 编码  在进行RC4加密  base64编码发送</span></p><hr /><h5 id='31-连接地址说明'><span>3.1 连接地址说明</span></h5><p><span>群主免费服务器连接地址 ws://msplock.vip:8810/api/user/ws?ExeID=xxx&amp;DevID=xxxx</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>ExeID</span></td><td><span>文本型</span></td><td><span>软件ID</span></td></tr><tr><td><span>DeviceID</span></td><td><span>文本型</span></td><td><span>设备ID</span></td></tr></tbody></table></figure><h5 id='32-获取软件基本信息'><span>3.2 获取软件基本信息</span></h5><p><span> var json = { &quot;Type&quot;: &quot;GetExeInfo&quot; }</span></p><h5 id='33-获取验证码'><span>3.3 获取验证码</span></h5><p><span> var json = { &quot;Type&quot;: &quot;GetCode&quot; }</span></p><h5 id='34-用户注册'><span>3.4 用户注册</span></h5><p><span>  var json = { &quot;Type&quot;: &quot;Register&quot;, &quot;Data&quot;: { &quot;Name&quot;: </span><em><span>Name</span></em><span>, &quot;Pwd&quot;: </span><em><span>Pwd</span></em><span>, &quot;Code&quot;: </span><em><span>Code</span></em><span> } }</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Pwd</span></td><td><span>文本型</span></td><td><span>密码</span></td></tr><tr><td><span>Code</span></td><td><span>文本型</span></td><td><span>验证码</span></td></tr></tbody></table></figure><h5 id='35-用户登录'><span>3.5 用户登录</span></h5><p><span>  var json = {&quot;Type&quot;:&quot;Login&quot;,&quot;Data&quot;:{&quot;Name&quot;:</span><em><span>Name</span></em><span>,&quot;Pwd&quot;:</span><em><span>Pwd</span></em><span>}}</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Pwd</span></td><td><span>文本型</span></td><td><span>密码</span></td></tr></tbody></table></figure><h5 id='36-卡密登录'><span>3.6 卡密登录</span></h5><p><span> var json = {&quot;Type&quot;:&quot;CarLogin&quot;,&quot;Data&quot;:{&quot;Serial&quot;:</span><em><span>Serial</span></em><span>}}</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Serial</span></td><td><span>文本型</span></td><td><span>卡密</span></td></tr></tbody></table></figure><h5 id='37-卡密充值'><span>3.7 卡密充值</span></h5><p><span>var json = {&quot;Type&quot;:&quot;UserPay&quot;,&quot;Data&quot;:{&quot;Name&quot;:</span><em><span>Name</span></em><span>,&quot;Serial&quot;:</span><em><span>Serial</span></em><span>}}</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Serial</span></td><td><span>文本型</span></td><td><span>卡密</span></td></tr></tbody></table></figure><h5 id='38-修改密码'><span>3.8 修改密码</span></h5><p><span>提交数据::{&quot;Type&quot;:&quot;UpUserPwd&quot;,&quot;Data&quot;:{&quot;Name&quot;:Name,&quot;OldPwd&quot;:OldPwd,&quot;NewPwd&quot;:NewPwd}}</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>OldPwd</span></td><td><span>文本型</span></td><td><span>旧密码</span></td></tr><tr><td><span>NewPwd</span></td><td><span>文本型</span></td><td><span>新密码</span></td></tr></tbody></table></figure><h5 id='39-换绑'><span>3.9 换绑</span></h5><p><span>换绑成功 扣除用户到期时间</span></p><p><span> var json = {&quot;Type&quot;:&quot;BindDeviceID&quot;,&quot;Data&quot;:{&quot;Name&quot;:</span><em><span>Name</span></em><span>,&quot;Pwd&quot;:</span><em><span>Pwd</span></em><span>}}</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Pwd</span></td><td><span>文本型</span></td><td><span>密码</span></td></tr></tbody></table></figure><h5 id='310-加入设备黑名单'><span>3.10 加入设备黑名单</span></h5><p><span>将用户状态 修改为禁用 并把设备加入黑名单中</span></p><p><span> var json = {&quot;Type&quot;:&quot;AddBlack&quot;,&quot;Data&quot;:{&quot;Bak&quot;:</span><em><span>Bak</span></em><span>}}  </span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Bak</span></td><td><span>文本型</span></td><td><span>情况说明</span></td></tr></tbody></table></figure><h5 id='311-获取用户信息'><span>3.11 获取用户信息</span></h5><p><span> var json = {&quot;Type&quot;:&quot;GetUserInfo&quot;}  </span></p><h5 id='312-设置用户配置信息'><span>3.12 设置用户配置信息</span></h5><p><span>用于用户新设备下载配置文件</span></p><p><span>提交数据::{&quot;Type&quot;:&quot;SetUerConf&quot;,&quot;Data&quot;:{&quot;Conf&quot;:Conf}}  </span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Conf</span></td><td><span>文本型</span></td><td><span>用户配置信息 如：用户头像/按键设置等</span></td></tr></tbody></table></figure><h5 id='313-获取核心加密数据'><span>3.13 获取核心加密数据</span></h5><p><span>  var json = {&quot;Type&quot;:&quot;GetExeData&quot;}  </span></p><h5 id='314-获取远程加密变量'><span>3.14 获取远程加密变量</span></h5><p><span>var json ={&quot;Type&quot;:&quot;GetVariable&quot;,&quot;Data&quot;:{&quot;Key&quot;:</span><em><span>Key</span></em><span>}}  </span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Key</span></td><td><span>文本型</span></td><td><span>键名称</span></td></tr></tbody></table></figure><h5 id='315-支付获取微信二维码链接和发卡链接'><span>3.15 支付_获取微信二维码链接和发卡链接</span></h5><p><span> var json ={&quot;Type&quot;:&quot;GetAdminPay&quot;}  </span></p><h5 id='316-支付查询卡密'><span>3.16 支付_查询卡密</span></h5><p><span>判断仓库里是否有对应类型的卡密 返回卡ID</span></p><p><span> var json ={&quot;Type&quot;:&quot;FindCarInfo&quot;,&quot;Data&quot;:{&quot;CarType&quot;:</span><em><span>CarType</span></em><span>}}  </span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>CarType</span></td><td><span>整数型</span></td><td><span>0=小时卡 1=天卡 2=周卡 3=月卡 4=季卡 5=半年卡 6=年卡 7=永久卡</span></td></tr></tbody></table></figure><h5 id='317-支付创建支付订单'><span>3.17 支付_创建支付订单</span></h5><p><span>创建支付宝订单 返回base64 图片二维码</span></p><p><span> var json ={&quot;Type&quot;:&quot;AliPayCreate&quot;,&quot;Data&quot;:{&quot;CarID&quot;:</span><em><span>CarID</span></em><span>}}  </span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>CarID</span></td><td><span>文本型</span></td><td><span>卡ID  由支付_查询卡密 获得</span></td></tr></tbody></table></figure><h5 id='318-支付是否到账'><span>3.18 支付_是否到账</span></h5><p><span>到账后由服务器自动推送  tag=CompletePayment  在接受事件里接受自己处理回调</span></p><p><span>返回卡密信息</span></p><h5 id='319-支付提卡'><span>3.19 支付_提卡</span></h5><p><span>返回卡密信息</span></p><p><span> var json ={&quot;Type&quot;:&quot;PutCar&quot;,&quot;Data&quot;:{&quot;BuillID&quot;:</span><em><span>BuillID</span></em><span>}}  </span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>BuillID</span></td><td><span>文本型</span></td><td><span>支付宝订单号</span></td></tr></tbody></table></figure><h5 id='320-主动心跳'><span>3.20 主动心跳</span></h5><p><span>必须在10分钟之内执行一次</span></p><p><span> var json ={&quot;Type&quot;:&quot;Ping&quot;,&quot;Data&quot;:{&quot;Token&quot;:</span><em><span>Token</span></em><span>,&quot;Key&quot;:key}}  </span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Token</span></td><td><span>文本型(可空)</span></td><td><span>加密数据</span></td></tr><tr><td><span>Key</span></td><td><span>文本型(可空)</span></td><td><span>加密密钥</span></td></tr></tbody></table></figure><p><span>token 组成</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>ExeID</span></td><td><span>文本型(可空)</span></td><td><span>软件ID</span></td></tr><tr><td><span>DevID</span></td><td><span>文本型(可空)</span></td><td><span>设备ID</span></td></tr><tr><td><span>AdminID</span></td><td><span>文本型(可空)</span></td><td><span>作者密钥</span></td></tr><tr><td><span>Version</span></td><td><span>文本型(可空)</span></td><td><span>版本</span></td></tr><tr><td><span>ExeMD5</span></td><td><span>文本型(可空)</span></td><td><span>软件md5</span></td></tr><tr><td><span>CRCOld</span></td><td><span>文本型(可空)</span></td><td><span>CRC初始</span></td></tr><tr><td><span>CRCNew</span></td><td><span>文本型(可空)</span></td><td><span>CRC新</span></td></tr><tr><td><span>Time</span></td><td><span>文本型(可空)</span></td><td><span>时间戳</span></td></tr></tbody></table></figure><h5 id='321-下线通知'><span>3.21 下线通知</span></h5><p><span>服务器自动推送  tag=OffLine 在接受事件里自己处理(程序退出) </span></p><h5 id='322-实时消息'><span>3.22 实时消息</span></h5><p><span>服务器自动推送  tag=SendMsg 在接受事件里自己处理(程序展示实时消息)</span></p><h5 id='323-扫码登陆'><span>3.23 扫码登陆</span></h5><p><span> var json ={&quot;Type&quot;:&quot;QuickLogin&quot;} </span></p><h5 id='324-vmp授权下发'><span>3.24 VMP授权下发</span></h5><p><span>var json={&quot;Type&quot;:&quot;VMPAuth&quot;,&quot;Data&quot;:{&quot;HardwareId&quot;:HardwareId}}</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>HardwareId</span></td><td><span>文本型(可空)</span></td><td><span>设备ID</span></td></tr></tbody></table></figure><h3 id='4http网页接口'><span>4.HTTP网页接口</span></h3><h5 id='41-getcode-获取验证码-get'><span>4.1 GetCode 获取验证码-GET</span></h5><p><span>/api/user/GetCode?DevKey=XXXXXX</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>DevKey</span></td><td><span>文本型</span></td><td><span>校验码</span></td></tr></tbody></table></figure><h5 id='42-getexeinfo-获取软件信息-get'><span>4.2 GetExeInfo 获取软件信息-GET</span></h5><p><span>/api/user/GetExeInfo?DevKey=XXXXXX</span></p><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>DevKey</span></td><td><span>文本型</span></td><td><span>校验码</span></td></tr></tbody></table></figure><h5 id='43-userpay-用户充值-post'><span>4.3 UserPay 用户充值-POST</span></h5><p><span>/api/user/UserPay</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"ExeID":ExeID,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Name": Name,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Serial": Serial,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 115px;"></div><div class="CodeMirror-gutters" style="display: none; height: 115px;"></div></div></div></pre><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>ExeID</span></td><td><span>文本型</span></td><td><span>软件ID</span></td></tr><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Serial</span></td><td><span>文本型</span></td><td><span>卡密</span></td></tr></tbody></table></figure><h5 id='44-upuserpwd-更新用户密码-post'><span>4.4 UpUserPwd 更新用户密码-POST</span></h5><p><span>/api/user/UpUserPwd</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"ExeID":ExeID,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Name":Name,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"OldPwd":OldPwd,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"NewPwd":NewPwd</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 138px;"></div><div class="CodeMirror-gutters" style="display: none; height: 138px;"></div></div></div></pre><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>ExeID</span></td><td><span>文本型</span></td><td><span>软件ID</span></td></tr><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>OldPwd</span></td><td><span>文本型</span></td><td><span>旧密码</span></td></tr><tr><td><span>NewPwd</span></td><td><span>文本型</span></td><td><span>新密码</span></td></tr></tbody></table></figure><h5 id='45-binddeviceid-解绑-post'><span>4.5 BindDeviceID 解绑-POST</span></h5><p><span>/api/user/BindDeviceID </span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"ExeID":ExeID,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Name":Name,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Pwd":Pwd</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 115px;"></div><div class="CodeMirror-gutters" style="display: none; height: 115px;"></div></div></div></pre><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>ExeID</span></td><td><span>文本型</span></td><td><span>软件ID</span></td></tr><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Pwd</span></td><td><span>文本型</span></td><td><span>密码</span></td></tr></tbody></table></figure><h5 id='46-carlogin-卡密登录-post'><span>4.6 CarLogin 卡密登录-POST</span></h5><p><a href='/api/user/CarLogin/api/user/CarLogin?DevKey=XXXXXX'><span>/api/user/CarLogin/api/user/CarLogin?DevKey=XXXXXX</span></a></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Serial": Serial,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="" cm-zwsp="">
+</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="display: none; height: 92px;"></div></div></div></pre><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Serial</span></td><td><span>文本型</span></td><td><span>卡密</span></td></tr></tbody></table></figure><h5 id='47-login-账号登录-post'><span>4.7 Login 账号登录-POST</span></h5><p><span>/api/user/Login?DevKey=XXXXXX </span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Name":Name,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Pwd":Pwd, </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="display: none; height: 92px;"></div></div></div></pre><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Pwd</span></td><td><span>文本型</span></td><td><span>密码</span></td></tr></tbody></table></figure><h5 id='48-register-用户注册'><span>4.8 Register 用户注册</span></h5><p><span>/api/user/Register</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"ExeID":ExeID,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Name":Name,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Pwd":Pwd, </span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"Code":Code,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"DevKey":DevKey,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 161px;"></div><div class="CodeMirror-gutters" style="display: none; height: 161px;"></div></div></div></pre><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>ExeID</span></td><td><span>文本型</span></td><td><span>软件ID</span></td></tr><tr><td><span>Name</span></td><td><span>文本型</span></td><td><span>用户名</span></td></tr><tr><td><span>Pwd</span></td><td><span>文本型</span></td><td><span>密码</span></td></tr><tr><td><span>Code</span></td><td><span>文本型</span></td><td><span>验证码</span></td></tr><tr><td><span>DevKey</span></td><td><span>文本型</span></td><td><span>检验码</span></td></tr></tbody></table></figure><h5 id='49-findcarinfo-获取卡密信息'><span>4.9 FindCarInfo 获取卡密信息</span></h5><p><span>/api/user/FindCarInfo?DevKey=XXXXXX</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang=""><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"ExeID":ExeID,</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"TyCar":0</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="display: none; height: 92px;"></div></div></div></pre><figure><table><thead><tr><th><span>名称</span></th><th><span>类型</span></th><th><span>注释</span></th></tr></thead><tbody><tr><td><span>ExeID</span></td><td><span>文本型</span></td><td><span>软件ID</span></td></tr><tr><td><span>TyCar</span></td><td><span>整数型</span></td><td><span>0-7 (0=小时卡 1=天卡 2=周卡 3=月卡 4=季卡 5=半年卡 6=年卡 7=永久卡)</span></td></tr></tbody></table></figure></div></div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#modal {
+    display: none;
+}
+
+#i5plof {
+    color: rgb(51, 51, 51);
+    font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", sans-serif;
+    font-size: 16px;
+    orphans: 4;
+    white-space: pre-wrap;
+}
+
+#ibbfu1 {
+    break-after: avoid-page;
+    break-inside: avoid;
+    font-size: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+#iv4eb2 {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    padding-left: 30px;
+    position: relative;
+    orphans: 2;
+    white-space: normal;
+}
+
+#io3zoz {
+    position: relative;
+}
+
+#i8g25s {
+    line-height: inherit;
+    orphans: 4;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+#iea9q2 {
+    position: relative;
+}
+
+#iqzth2 {
+    line-height: inherit;
+    orphans: 4;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+#iy54in {
+    position: relative;
+}
+
+#i1wqgk {
+    line-height: inherit;
+    orphans: 4;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+#ihzqia {
+    position: relative;
+}
+
+#iaqzif {
+    line-height: inherit;
+    orphans: 4;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+#iqoj1n {
+    position: relative;
+}
+
+#iu6bfb {
+    line-height: inherit;
+    orphans: 4;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+#ii57p8 {
+    position: relative;
+}
+
+#i2fmxr {
+    line-height: inherit;
+    orphans: 4;
+    margin-bottom: 0.5rem;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+#i8l7pp {
+    font-size: 18px;
+    text-align: center;
+}
+
+#i5rjxp {
+    color: rgb(30, 159, 255);
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: none;
+}
+
+#iugn8b {
+    padding: 7.5px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: grey;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, Arial, sans-serif;
+    font-size: 14px;
+}
+
+#irexsr {
+    margin-bottom: 30px;
+    padding: 7.5px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: grey;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", Tahoma, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.tag-body {
+    color: #5c3838;
+}
+
+#iwcwtl {
+    color: rgb(51, 51, 51);
+    font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, "Segoe UI Emoji", sans-serif;
+    font-size: 16px;
+    orphans: 4;
+    text-align: start;
+    white-space: pre-wrap;
+}
+
+#i0a553 {
+    font-size: 18px;
+    text-align: center;
+}
